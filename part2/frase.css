@@ -8,3 +8,76 @@
 7 ritardare progressivamente l'animazione delle altre 2 parole 
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Bree Serif', serif;
+  margin-inline: auto;
+  width: 45%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #6a889c;
+}
+
+#testoAlternato {
+  background-color: white;
+  width: 700px;
+  font-size: 1.5rem;
+  border: 2px solid #666;
+  color: #333;
+  padding: 2rem;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.parole {
+  color: #6a889c;
+  opacity: 0;
+  position: absolute;
+  /*animation: rotation 3s linear infinite;*/
+}
+
+.first {
+  animation: rotateWord 9s linear infinite 0s;
+}
+.second {
+  animation: rotateWord 9s linear infinite 6s;
+}
+.third {
+  animation: rotateWord 9s linear infinite 9s;
+}
+
+/*
+@keyframes rotation {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}*/
+
+@keyframes rotateWord {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  10%,
+  30% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  40%,
+  60% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
